@@ -1,7 +1,8 @@
 # movie
 
 基于flutter的91美剧网客户端
-<p align="center">
+
+<div align="center">
 	<img src="imgs/Screenshot_20191026-182558.jpg"   width="30%" height="30%">
 	<p align="center">
 		<em>TV首页</em>

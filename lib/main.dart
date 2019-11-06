@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:PureBook/view/MovieIndex.dart';
+import 'package:PureBook/view/PrivateSpace.dart';
 import 'package:PureBook/view/TVIndex.dart';
 import 'package:flustars/flustars.dart';
 import 'package:flutter/material.dart';
@@ -41,6 +42,7 @@ class _MainPageState extends State<MainPage>
   var appBarTitles = {
     0: "美剧",
     1: "电影",
+    2: "燃图",
   };
 
   var _pageController = PageController();
@@ -55,6 +57,11 @@ class _MainPageState extends State<MainPage>
         title: Text(
           '电影',
         )),
+    BottomNavigationBarItem(
+        icon: Icon(Icons.weekend),
+        title: Text(
+          '燃图',
+        )),
   ];
 
   Text getTabTitle(int curIndex) {
@@ -68,7 +75,7 @@ class _MainPageState extends State<MainPage>
   /*
    * 存储的四个页面，和Fragment一样
    */
-  var _pages = [TVIndex(), MovieIndex()];
+  var _pages = [TVIndex(), MovieIndex(),PrivateSpace()];
 
   @override
   Widget build(BuildContext context) {
@@ -85,6 +92,7 @@ class _MainPageState extends State<MainPage>
             itemBuilder: (context, index) => _pages[index]),
       ),
       bottomNavigationBar: BottomNavigationBar(
+        elevation: 0,
         selectedItemColor: Colors.deepOrange,
         items: bottoms,
         type: BottomNavigationBarType.fixed,

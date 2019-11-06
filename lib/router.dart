@@ -5,7 +5,7 @@ import 'package:PureBook/view/TVIndex.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-///https://www.jianshu.com/p/b9d6ec92926f
+
 
 class Router {
   static const detailPage = 'app://DetailPage';

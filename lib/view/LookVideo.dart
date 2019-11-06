@@ -57,21 +57,23 @@ class _LookVideoState extends State<LookVideo> {
         contentHeight: 220,
         statusBarColor: Colors.black,
       ),
-      body: SingleChildScrollView(
+      body: this.widget.src[4] == null?null:SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             SizedBox(
               height: 20,
             ),
-            Padding(
-              padding: const EdgeInsets.only(left: 17.0, top: 5.0),
-              child: Wrap(
-                spacing: 2, //主轴上子控件的间距
-                runSpacing: 5, //交叉轴上子控件之间的间距
-                children: Boxs(),
-              ),
-            ),
+            this.widget.src[4] == null
+                ? Container()
+                : Padding(
+                    padding: const EdgeInsets.only(left: 17.0, top: 5.0),
+                    child: Wrap(
+                      spacing: 2, //主轴上子控件的间距
+                      runSpacing: 5, //交叉轴上子控件之间的间距
+                      children: Boxs(),
+                    ),
+                  ),
             Padding(
               padding: const EdgeInsets.only(left: 17.0, top: 20.0),
               child: Text(
@@ -79,22 +81,24 @@ class _LookVideoState extends State<LookVideo> {
                 style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
               ),
             ),
-            GridView.count(
-              physics: new NeverScrollableScrollPhysics(),
-              children: getWidgetList(this.widget.src[0]),
-              shrinkWrap: true,
-              //水平子Widget之间间距
-              crossAxisSpacing: 10.0,
-              //垂直子Widget之间间距
-              mainAxisSpacing: 5.0,
-              //GridView内边距
-              padding: EdgeInsets.all(5.0),
-              //一行的Widget数量
-              crossAxisCount: 3,
-              //子Widget宽高比例
-              childAspectRatio: 1 / 2,
-              cacheExtent: 400.0,
-            ),
+            this.widget.src[0] == null
+                ? Container()
+                : GridView.count(
+                    physics: new NeverScrollableScrollPhysics(),
+                    children: getWidgetList(this.widget.src[0]),
+                    shrinkWrap: true,
+                    //水平子Widget之间间距
+                    crossAxisSpacing: 10.0,
+                    //垂直子Widget之间间距
+                    mainAxisSpacing: 5.0,
+                    //GridView内边距
+                    padding: EdgeInsets.all(5.0),
+                    //一行的Widget数量
+                    crossAxisCount: 3,
+                    //子Widget宽高比例
+                    childAspectRatio: 1 / 2,
+                    cacheExtent: 400.0,
+                  ),
             Divider(),
             Padding(
               padding: const EdgeInsets.only(left: 17.0, top: 15.0),
@@ -103,22 +107,24 @@ class _LookVideoState extends State<LookVideo> {
                 style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
               ),
             ),
-            GridView.count(
-              physics: new NeverScrollableScrollPhysics(),
-              children: getWidgetList(this.widget.src[1]),
-              shrinkWrap: true,
-              //水平子Widget之间间距
-              crossAxisSpacing: 10.0,
-              //垂直子Widget之间间距
-              mainAxisSpacing: 5.0,
-              //GridView内边距
-              padding: EdgeInsets.all(5.0),
-              //一行的Widget数量
-              crossAxisCount: 3,
-              //子Widget宽高比例
-              childAspectRatio: 1 / 2,
-              cacheExtent: 400.0,
-            )
+            this.widget.src[1] == null
+                ? Container()
+                : GridView.count(
+                    physics: new NeverScrollableScrollPhysics(),
+                    children: getWidgetList(this.widget.src[1]),
+                    shrinkWrap: true,
+                    //水平子Widget之间间距
+                    crossAxisSpacing: 10.0,
+                    //垂直子Widget之间间距
+                    mainAxisSpacing: 5.0,
+                    //GridView内边距
+                    padding: EdgeInsets.all(5.0),
+                    //一行的Widget数量
+                    crossAxisCount: 3,
+                    //子Widget宽高比例
+                    childAspectRatio: 1 / 2,
+                    cacheExtent: 400.0,
+                  )
           ],
         ),
       ),

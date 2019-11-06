@@ -279,7 +279,6 @@ class _MovieIndexState extends State<MovieIndex>
           ),
         ),
         GridView.count(
-          cacheExtent: 400,
           physics: NeverScrollableScrollPhysics(),
           children: getWidgetList(data),
           shrinkWrap: true,
@@ -292,7 +291,7 @@ class _MovieIndexState extends State<MovieIndex>
           //一行的Widget数量
           crossAxisCount: 3,
           //子Widget宽高比例
-          childAspectRatio: 1 / 2,
+          childAspectRatio: 1/2,
         )
       ],
     );
